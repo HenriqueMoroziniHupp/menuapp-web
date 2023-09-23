@@ -1,8 +1,8 @@
 {
-  "name": "quasar-menu",
+  "name": "menu-app-web",
   "version": "0.0.1",
-  "description": "A Quasar Project",
-  "productName": "Quasar App",
+  "description": "A Quasar Project for Menu",
+  "productName": "Menu App  Web",
   "author": "HenriqueMoroziniHupp <henriquehupp@hotmail.com>",
   "private": true,
   "scripts": {
