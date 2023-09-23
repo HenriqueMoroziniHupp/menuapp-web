@@ -10,7 +10,7 @@
 
 const { configure } = require('quasar/wrappers');
 
-module.exports = configure(function (/* ctx */) {
+module.exports = configure(function (ctx) {
   return {
     eslint: {
       // fix: true,
@@ -50,8 +50,9 @@ module.exports = configure(function (/* ctx */) {
     build: {
       // https://quasar.dev/quasar-cli-vite/handling-process-env#adding-to-process-env
       env: {
-        // VUE_APP_API: 'https://menuapp-backend-production.up.railway.app',
-        VUE_APP_API: 'http://127.0.0.1:3333',
+        VUE_APP_API: ctx.dev
+          ? 'http://127.0.0.1:3333'
+          : 'https://menuapp-backend-production.up.railway.app',
       },
 
       target: {
