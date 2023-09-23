@@ -62,16 +62,6 @@ const products = useProductsStore();
 const { productData } = storeToRefs(products);
 
 products.getProducts();
-console.log(
-  '%cprocess.env: ',
-  'color: MidnightBlue; background: Aquamarine;',
-  process.env
-);
-console.log(
-  '%cimport.meta: ',
-  'color: MidnightBlue; background: Aquamarine;',
-  import.meta
-);
 </script>
 
 <style lang="scss" scoped>
