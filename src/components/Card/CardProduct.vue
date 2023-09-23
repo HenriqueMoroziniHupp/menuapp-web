@@ -1,7 +1,8 @@
 <template>
   <q-card class="card-product shadow-5 full-width">
-    <q-img :src="product.image_url" :ratio="4 / 3">
-      <div class="col text-h6 ellipsis absolute-bottom">
+    <!-- <q-img :src="product.image_url" :ratio="4 / 3"> -->
+    <q-img :src="product.image_url" :ratio="16 / 9">
+      <div class="text-body1 text-weight-medium absolute-bottom ellipsis">
         {{ product.name }}
       </div>
     </q-img>
@@ -44,7 +45,7 @@
       </div>
       <div
         v-if="product.description"
-        class="card-product__description text-caption text-grey"
+        class="card-product__description text-caption"
       >
         <p>{{ product.description }}</p>
       </div>
@@ -61,7 +62,7 @@ const props = defineProps<{ product: IProduct }>();
 
 <style lang="scss" scoped>
 .card-product {
-  // width: 300px;
+  // min-width: 300px;
   max-width: 430px;
   border-radius: 1rem;
 
@@ -75,7 +76,7 @@ const props = defineProps<{ product: IProduct }>();
 
   &__description {
     padding-top: 0.4rem;
-    color: red;
+    color: $soft-gray-500;
   }
 }
 // }
