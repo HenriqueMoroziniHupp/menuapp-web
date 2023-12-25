@@ -51,8 +51,8 @@ module.exports = configure(function (ctx) {
       // https://quasar.dev/quasar-cli-vite/handling-process-env#adding-to-process-env
       env: {
         VUE_APP_API: ctx.dev
-          ? 'http://127.0.0.1:3333'
-          : 'https://menuapp-backend-production.up.railway.app',
+          ? 'https://menuapp-api.cyclic.app'
+          : 'https://menuapp-api.cyclic.app',
       },
 
       target: {
