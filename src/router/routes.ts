@@ -7,6 +7,11 @@ const routes: RouteRecordRaw[] = [
     children: [
       { path: '', component: () => import('pages/IndexPage.vue') },
       {
+        path: 'ovo',
+        name: 'ovo',
+        component: () => import('pages/IndexPageOvo.vue'),
+      },
+      {
         path: 'item',
         name: 'item',
         component: () => import('components/MenuComponent.vue'),

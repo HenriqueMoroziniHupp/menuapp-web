@@ -1,23 +1,31 @@
 <template>
-  <div
-    v-if="loading"
-    class="center card-container q-pa-md row items-start justify-center"
-  >
-    <span class="loader" />
-  </div>
+  <template v-if="loading">
+    <div class="center card-container q-pa-md row items-start justify-center">
+      <span class="loader" />
+    </div>
+  </template>
+  <template v-else>
+    <div class="card-container q-pa-md row items-start justify-center">
+      <CardProduct
+        v-for="product in productData"
+        :key="product.id"
+        :product="product"
+      />
 
-  <router-view />
+      <!-- <router-link :to="{ name: 'item' }"> suhas </router-link> -->
+    </div>
+  </template>
 </template>
 
 <script lang="ts" setup>
 import { onMounted, ref } from 'vue';
 
 import { useProductsStore } from 'src/stores/productsStore';
-// import { storeToRefs } from 'pinia';
-// import CardProduct from 'src/components/Card/CardProduct.vue';
+import { storeToRefs } from 'pinia';
+import CardProduct from 'src/components/Card/CardProduct.vue';
 
 const products = useProductsStore();
-// const { productData } = storeToRefs(products);
+const { productData } = storeToRefs(products);
 const loading = ref<boolean>(true);
 
 onMounted(async () => {
@@ -31,7 +39,17 @@ onMounted(async () => {
 });
 </script>
 
-<style>
+<style lang="scss" scoped>
+.card-container {
+  display: flex;
+  gap: 1rem;
+  // flex-direction: row;
+}
+.card-product {
+  // min-width: 300px;
+  max-width: 430px;
+  border-radius: 1rem;
+}
 .center {
   height: 100vh;
   display: flex;

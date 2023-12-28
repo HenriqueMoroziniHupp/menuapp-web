@@ -57,7 +57,7 @@
 import type { IProduct } from 'src/interfaces/IProduct';
 import PriceProduct from 'src/components/molecules/PriceProduct.vue';
 
-const props = defineProps<{ product: IProduct }>();
+defineProps<{ product: IProduct }>();
 </script>
 
 <style lang="scss" scoped>
